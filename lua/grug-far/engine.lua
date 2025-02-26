@@ -92,8 +92,10 @@ M.DiffSeparatorChars = ' '
 function M.getEngine(type)
   if type == 'astgrep' then
     return require('grug-far.engine.astgrep')
-  else
+  elseif type == 'ripgrep' then
     return require('grug-far.engine.ripgrep')
+  else
+    return require('grug-far.engine.cscope')
   end
 end
 
